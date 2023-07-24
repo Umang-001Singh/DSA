@@ -12,7 +12,8 @@ public class FrogJumpStairs {
 
     }
 
-    public static int energy(int []arr,int []dp, int n){ //HERE n REPRESENTS INDEX VALUE.
+    public static int energy(int []arr,int []dp, int n){ //HERE n REPRESENTS SIZE OF RECURSION TREE VALUE. IT DECREASES AT EACH RECURSION CALL
+        // MEMOIZATION METHOD
         // if(n == 0){
         //     return 0;
         // }
