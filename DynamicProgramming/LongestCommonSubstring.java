@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class LongestCommonSubstring {
     public static void main(String[] args) {
-        String text1 = "ABCDGH";
-        String text2 = "ACDGHR";
+        String text1 = "abb";
+        String text2 = "bba";
         int [][]dp = new int[text1.length()+1][text2.length()+1];
         for(int []row: dp){
             Arrays.fill(row, -1);

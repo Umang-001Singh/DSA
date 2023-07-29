@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class PallindromeSubstring {
     public static void main(String[] args) {
-        String text1 = "aacbdcaa";
+        String text1 = "abb";
         String text2 = "";
         for(int i = text1.length()-1;i>=0;i--){
             text2+=text1.charAt(i);
@@ -31,7 +31,7 @@ public class PallindromeSubstring {
         for(int f = 1;f<=text1.length();f++){
             for(int s = 1;s<=text2.length();s++){
                 if(text1.charAt(f-1) == text2.charAt(s-1)){
-                    dp[f][s] = text1.charAt(s-1) + dp[f-1][s-1];
+                    dp[f][s] = text1.charAt(f-1) + dp[f-1][s-1];
                     
                 }
                 else{
@@ -63,7 +63,7 @@ public class PallindromeSubstring {
         
 
         int j = text.length()-1;
-        for(int i = 0;i<text.length();i++){
+        for(int i = 0;i<text.length()/2;i++){
             if(text.charAt(j) != text.charAt(i)){
                 return false;
             }
