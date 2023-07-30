@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class WildcardMatching {
     public static void main(String[] args) {
-        String text1 = "?";
-        String text2 = "aaa";
-        int [][]dp = new int[text1.length()][text2.length()];
+        String text1 = "*";
+        String text2 = "aa";
+        int [][]dp = new int[text1.length()+1][text2.length()+1];
         for(int []row: dp){
             Arrays.fill(row, -1);
         }
-        int ans = wildcard(text1, text2, text1.length()-1, text2.length()-1, dp);
+        int ans = wildcard(text1, text2, text1.length(), text2.length(), dp);
         System.out.println(ans);
     }
 
