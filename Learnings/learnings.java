@@ -10,6 +10,8 @@ package Learnings;
 // int []arr = new int[] {-1,-1,-1,-1,-1,-1};   CURLY BRACKETS REPRESENT THE SIZE OF THE ARRAY AND VALUED INITAILIZED TO IT.
 
 
-// Use (int)1e9 inplace of Integer. MAX_VALUE, to prevent from overflow, because if we return Integer. MAX_VALUE 
+// 3. Use (int)1e9 inplace of Integer. MAX_VALUE, to prevent from overflow, because if we return Integer. MAX_VALUE 
 // from recursion and go on adding 1 to it as in this question then it will lead to overflow. 
 // 1e9 simply means (1) * (10^9)
+
+// Focus on the number of times the loop is running in a program, especially in the Graphs, eg, Prim's Algorithm.
