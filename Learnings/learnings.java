@@ -15,3 +15,5 @@ package Learnings;
 // 1e9 simply means (1) * (10^9)
 
 // Focus on the number of times the loop is running in a program, especially in the Graphs, eg, Prim's Algorithm.
+
+// To return double value using compareTo method in comparable interface, use return Double.compare(object 1, object 2);
