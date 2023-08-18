@@ -6,7 +6,7 @@ public class DistinctSubSeq {
     public static void main(String[] args) {
         String text1 = "babgbag";
         String text2 = "bag";
-        int [][]dp = new int[text1.length()+11][text2.length()+1];
+        int [][]dp = new int[text1.length()+1][text2.length()+1];
         for(int []row: dp){
             Arrays.fill(row, -1);
         }

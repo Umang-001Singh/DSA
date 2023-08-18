@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class PallindromeSubstring {
     public static void main(String[] args) {
-        String text1 = "abb";
+        String text1 = "122333456";
         String text2 = "";
         for(int i = text1.length()-1;i>=0;i--){
             text2+=text1.charAt(i);

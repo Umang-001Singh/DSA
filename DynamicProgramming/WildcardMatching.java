@@ -83,34 +83,36 @@ public class WildcardMatching {
         // TABULATION
 
         dp[0][0] = 1;
-        for(int col = 1;col<=j;col++){
-            dp[0][col] = 0;
-        }
 
-        for(int row = 1;row<=i;row++){
-            if(str1.charAt(row-1) == '*'){
-                dp[row][0] = 1; 
-            }
-            else{
-                dp[row][0] = 0;
-            }    
+		for(int col = 1;col<=str2.length();col++){
+			dp[0][col] = 0;
+		}
 
-        }
-        
-        for(int row = 1;row<=i;row++){
-            for(int col = 1;col<=j;col++){
-                if((str1.charAt(row-1) == str2.charAt(col-1)) || str1.charAt(row-1) == '?'){
-                    dp[row][col] = dp[row-1][col-1];
+		for(int row = 1;row<=str1.length();row++){
+			int flag = 1;
+			for(int k = 1;k<=row;k++){
+                if(str1.charAt(k-1) != '*'){
+                    flag = 0;
+					break;
                 }
+			}
+			dp[row][0] = flag;
+		}
 
-                if(str1.charAt(row-1) == '*'){
-                    dp[row][col] = dp[row-1][col] | dp[row][col-1];
-                }
-
-                dp[row][col] = 0;
-            }
-        }
-        return dp[i][j];
-    
+		for(int row = 1;row<=str1.length();row++){
+			for(int col = 1;col<=str2.length();col++){
+				if( str1.charAt(row-1) == str2.charAt(col-1) || str1.charAt(row-1) == '?'){
+					dp[row][col] = dp[row-1][col-1];
+				}
+				
+				else if(str1.charAt(row-1) == '*'){
+					dp[row][col] = dp[row-1][col] | dp[row][col-1];
+				}
+				else{
+					dp[row][col] = 0;
+				}
+			}
+		}
+		return dp[i][j];
     }
 }
