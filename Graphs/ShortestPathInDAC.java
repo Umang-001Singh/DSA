@@ -69,8 +69,14 @@ public class ShortestPathInDAC {
     public static void topo(ArrayList<ArrayList<Pair>> adj, int[] vis, int node, Stack<Integer> st ){
         vis[node] = 1;
 
-        for(int i = 0;i<adj.get(node).size();i++){
-            int v = adj.get(node).get(i).first;
+        // for(int i = 0;i<adj.get(node).size();i++){
+        //     int v = adj.get(node).get(i).first;
+        //     if(vis[v] == 0){
+        //         topo(adj, vis, v, st);
+        //     }
+        // }
+        for(Pair it: adj.get(node)){
+            int v = it.first;
             if(vis[v] == 0){
                 topo(adj, vis, v, st);
             }

@@ -13,9 +13,11 @@ public class NumberOfDistinctIslands {
         HashSet<ArrayList<String>> ans = new HashSet<>();
         for(int i = 0;i<grid.length;i++){
             for(int j = 0;j<grid[0].length;j++){
-                ArrayList<String> list = new ArrayList<>();
-                islands(grid, vis, i, j, 0, 0, list);
-                ans.add(list);
+                if(vis[i][j] == 0 && grid[i][j] == 1){
+                    ArrayList<String> list = new ArrayList<>();
+                    islands(grid, vis, i, j, 0, 0, list);
+                    ans.add(list);
+                }
             }
         }
         return ans.size();
